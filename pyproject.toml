@@ -1,0 +1,31 @@
+[project]
+name = "bili-copilot"
+version = "0.1.0"
+description = "B站视频原始内容提取器 / Raw Content Extractor"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Bili_copilot Team"},
+]
+keywords = ["bilibili", "subtitle", "extractor"]
+
+dependencies = [
+    "requests",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+bili-copilot = "bili_copilot.cli:main"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
